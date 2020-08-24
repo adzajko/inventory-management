@@ -1,0 +1,52 @@
+<div class="add-customer-container container mt-5">
+  <button routerLink="/customers" class="btn btn-dark mb-2">
+    <i class="fa fa-arrow-left mr-2" aria-hidden="true"></i>Back
+  </button>
+  <h2 class="mb-5">Add a Customer</h2>
+  <form [formGroup]="addCustomerForm" (ngSubmit)="onCustomerFormSubmit()">
+    <div class="form-group">
+      <label for="customer-name">
+        <i class="fa fa-pencil mr-2"></i> Customer Name</label
+      >
+      <input
+        type="text"
+        name="customer-name"
+        formControlName="customerName"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="customer-email">
+        <i class="fa fa-envelope mr-2"></i> Customer email</label
+      >
+      <input
+        type="email"
+        name="customer-email"
+        formControlName="customerEmail"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="customer-name">
+        <i class="fa fa-list mr-2"></i> Products Name</label
+      >
+      <select
+        multiple
+        class="form-control"
+        name="products"
+        formControlName="productsArray"
+      >
+        <option *ngFor="let product of productsList" [value]="product">{{
+          product.name
+        }}</option>
+      </select>
+    </div>
+    <button
+      class="btn btn-danger d-block w-50 mx-auto"
+      type="submit"
+      [disabled]="!addCustomerForm.valid"
+    >
+      Create
+    </button>
+  </form>
+</div>

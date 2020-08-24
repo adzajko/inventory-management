@@ -1,0 +1,27 @@
+.sidebar {
+  margin: 2rem;
+  .sidebar-heading {
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid;
+  }
+  .sidebar-container {
+    margin-top: 50px;
+    @media (min-width: 320px) and (max-width: 992px) {
+      display: flex;
+    }
+    .sidebar-link {
+      margin: 10px 0;
+      @media (min-width: 320px) and (max-width: 992px) {
+        font-size: 14px;
+        margin: 10px;
+      }
+    }
+    .sidebar-link.active {
+      background-color: brown;
+      color: whitesmoke;
+      border-color: brown;
+    }
+  }
+}

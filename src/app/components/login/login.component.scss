@@ -1,0 +1,22 @@
+.form-container {
+  margin-top: 2rem;
+  h1 {
+    text-align: center;
+    margin: 2rem 0;
+  }
+}
+
+form {
+  label {
+    font-size: 22px;
+  }
+  max-width: 40%;
+  margin: 75px auto 0 auto;
+  @media (min-width: 320px) and (max-width: 992px) {
+    max-width: 95%;
+  }
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid brown;
+}

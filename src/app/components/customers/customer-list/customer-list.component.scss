@@ -1,0 +1,38 @@
+.btn.btn-danger {
+  margin-top: 50px;
+  margin-left: 3rem;
+}
+.section-title {
+  margin: 25px 3rem 50px 3rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+  @media (min-width: 320px) and (max-width: 992px) {
+    font-size: 26px;
+  }
+  padding-bottom: 20px;
+  border-bottom: 3px solid #212121;
+}
+
+.customer-list-container {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  @media (min-width: 320px) and (max-width: 992px) {
+    grid-template-columns: 100%;
+  }
+  gap: 2rem;
+  .customer-item {
+    padding: 1rem;
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    .customer-item-name {
+      font-size: 26px;
+      @media (min-width: 320px) and (max-width: 992px) {
+        font-size: 20px;
+      }
+      border-bottom: 1px solid #212121;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div class="sidebar">
+  <h3 class="sidebar-heading">Welcome back, {{ username }}</h3>
+
+  <nav class="sidebar-container">
+    <a
+      class="sidebar-link btn btn-outline-dark"
+      routerLink="/products"
+      routerLinkActive="active"
+      ><i class="fa fa-list mr-2"></i>Products</a
+    >
+    <a
+      class="sidebar-link btn btn-outline-dark"
+      routerLink="/customers/"
+      routerLinkActive="active"
+      ><i class="fa fa-users mr-2"></i>Customers</a
+    >
+    <button class="sidebar-link btn btn-outline-dark" (click)="logOut()">
+      <i class="fa fa-sign-out mr-2"></i>
+      Log Out
+    </button>
+  </nav>
+</div>

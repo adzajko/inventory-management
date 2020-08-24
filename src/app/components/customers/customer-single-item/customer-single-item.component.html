@@ -1,0 +1,26 @@
+<div class="customer-container container mt-5">
+  <button routerLink="/customers" class="btn btn-dark mb-2">
+    <i class="fa fa-arrow-left mr-2" aria-hidden="true"></i>Back
+  </button>
+  <div class="customer-data">
+    <h6 class="customer-title">{{ customer?.name }}</h6>
+    <p class="customer-mail">{{ customer?.email }}</p>
+  </div>
+  <div class="table-responsive">
+    <p class="text-center font-weight-bold">List of Products</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Product Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of customer?.purchasedProducts">
+          <td>{{ product.name }}</td>
+          <td>{{ product.price | number: '1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

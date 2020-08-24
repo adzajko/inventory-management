@@ -1,0 +1,8 @@
+.products-container {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 1rem;
+  @media (min-width: 320px) and (max-width: 992px) {
+    grid-template-columns: 50% 50%;
+  }
+}

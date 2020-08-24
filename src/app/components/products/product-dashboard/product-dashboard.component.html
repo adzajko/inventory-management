@@ -1,0 +1,25 @@
+<div class="btn-group my-5">
+  <button class="btn btn-outline-info" (click)="activateGridView()">
+    <i class="fa fa-th mr-2" aria-hidden="true"></i>
+    Grid View
+  </button>
+  <button class="btn btn-outline-info" (click)="activateListView()">
+    <i class="fa fa-list mr-2" aria-hidden="true"></i>
+    List View
+  </button>
+  <button
+    class="btn btn-outline-danger ml-5"
+    routerLink="/products/add-product"
+  >
+    <i class="fa fa-pencil mr-2" aria-hidden="true"></i>Add a Product
+  </button>
+</div>
+
+<section class="views-outlet">
+  <div class="list view-outlet" *ngIf="showListView">
+    <app-product-list-view></app-product-list-view>
+  </div>
+  <div class="grid view-outlet" *ngIf="showGridView">
+    <app-product-grid-view></app-product-grid-view>
+  </div>
+</section>
