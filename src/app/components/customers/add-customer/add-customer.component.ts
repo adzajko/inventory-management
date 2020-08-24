@@ -6,6 +6,7 @@ import { CustomerService } from 'src/app/services/customer/customer.service';
 import { Customer } from 'src/app/models/Customer.model';
 import { Router } from '@angular/router';
 import { v4 as uuid } from 'uuid';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-customer',
@@ -18,7 +19,8 @@ export class AddCustomerComponent implements OnInit {
   constructor(
     private productsService: ProductService,
     private customerService: CustomerService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -44,6 +46,7 @@ export class AddCustomerComponent implements OnInit {
       purchasedProducts: this.addCustomerForm.value.productsArray
     };
     this.customerService.addCustomer(helper);
+    this.toastr.success('Customer has been added.', 'Success!');
     this.router.navigateByUrl('/customers');
   }
 }

@@ -5,6 +5,7 @@ import { Product } from '../../../models/Product.model';
 import { v4 as uuid } from 'uuid';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-product',
@@ -17,7 +18,8 @@ export class AddProductComponent implements OnInit {
   constructor(
     private productsService: ProductService,
     private modalService: NgbModal,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -42,11 +44,17 @@ export class AddProductComponent implements OnInit {
     };
 
     this.productsService.addProduct(newProduct);
+    this.toastr.success('Product has been added', 'Success!');
     this.modalService.open(this.content, { centered: true });
   }
 
   returnToList(): void {
     this.modalService.dismissAll();
     this.router.navigateByUrl('/products');
+  }
+
+  resetForm(): void {
+    this.modalService.dismissAll();
+    this.addProductForm.reset();
   }
 }

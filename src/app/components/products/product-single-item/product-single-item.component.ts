@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../../models/Product.model';
 import { ProductService } from '../../../services/product/product.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-single-item',
@@ -10,11 +11,15 @@ import { ProductService } from '../../../services/product/product.service';
 export class ProductSingleItemComponent implements OnInit {
   @Input() product: Product;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {}
 
   deleteProduct(): void {
     this.productService.deleteProduct(this.product.id);
+    this.toastr.success('Product deleted.', 'Success!');
   }
 }
