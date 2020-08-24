@@ -13,9 +13,11 @@
     }
     .sidebar-link {
       margin: 10px 0;
+      min-width: 150px;
       @media (min-width: 320px) and (max-width: 992px) {
         font-size: 14px;
         margin: 10px;
+        min-width: 30%;
       }
     }
     .sidebar-link.active {
